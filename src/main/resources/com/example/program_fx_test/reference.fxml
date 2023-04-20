@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="824.0" style="-fx-background-color: fafafa;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.program_fx_test.ReferenceController">
+   <children>
+      <Text layoutX="345.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Заявление" wrappingWidth="173.47003173828125">
+         <font>
+            <Font name="Cascadia Mono Regular" size="26.0" />
+         </font>
+      </Text>
+      <TextField fx:id="date" layoutX="67.0" layoutY="421.0" prefHeight="28.0" prefWidth="177.0" promptText="Дата" />
+      <TextField fx:id="signature" layoutX="630.0" layoutY="418.0" prefHeight="28.0" prefWidth="168.0" promptText="Подпись" />
+      <TextField fx:id="statement" layoutX="67.0" layoutY="152.0" prefHeight="261.0" prefWidth="731.0" promptText="Текст Заявления" />
+      <TextField fx:id="whom" layoutX="553.0" layoutY="20.0" prefHeight="119.0" prefWidth="244.0" promptText="Кому" />
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>
