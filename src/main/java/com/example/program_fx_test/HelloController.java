@@ -36,10 +36,18 @@ public class HelloController {
 
         next_button.setOnAction(event -> {
          String loginText = login.getText().trim();
-         String loginPassword = password.getText().trim();
+         String password = this.password.getText().trim();
+         User user;
 
-         if(!loginText.equals("") && !loginPassword.equals(""))
-             loginUser(loginText, loginPassword);
+            try {
+                user  = getUserFormDb(loginText, password);
+            } catch (Exception e) {
+                //TODO pop up new scene like allert that user not found;
+            }
+
+
+            if(!loginText.equals("") && !password.equals(""))
+             loginUser(loginText, password);
                else
              System.out.println("Login and password is empty");
                 });
@@ -64,6 +72,11 @@ public class HelloController {
     }
 
     private void loginUser(String loginText, String loginPassword) {
+    }
+
+    private User getUserFormDb(String login, String password) throws Exception{
+        //TODO Go to db, find user
+        return null;
     }
 
 }
