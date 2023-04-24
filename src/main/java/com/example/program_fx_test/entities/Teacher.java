@@ -1,4 +1,4 @@
-package com.example.program_fx_test;
+package com.example.program_fx_test.entities;
 
 import java.net.URL;
 import java.util.ResourceBundle;

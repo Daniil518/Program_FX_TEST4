@@ -1,4 +1,6 @@
-package com.example.program_fx_test;
+package com.example.program_fx_test.dao;
+import com.example.program_fx_test.Const;
+
 import java.sql.*;
 
 public class Database extends Configs {

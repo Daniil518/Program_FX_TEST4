@@ -1,4 +1,4 @@
-package com.example.program_fx_test;
+package com.example.program_fx_test.controllers;
 
 import java.io.IOException;
 import java.net.URL;

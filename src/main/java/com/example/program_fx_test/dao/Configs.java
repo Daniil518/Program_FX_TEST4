@@ -1,4 +1,4 @@
-package com.example.program_fx_test;
+package com.example.program_fx_test.dao;
 
 public class Configs {
     protected String dbHost = "localhost";

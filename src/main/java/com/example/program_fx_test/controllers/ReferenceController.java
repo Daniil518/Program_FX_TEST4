@@ -1,4 +1,4 @@
-package com.example.program_fx_test;
+package com.example.program_fx_test.controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
