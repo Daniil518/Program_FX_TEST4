@@ -38,10 +38,12 @@ public class Repository {
 
     public void createUser(User user) throws SQLException, ClassNotFoundException {
         String insertStatement = "INSERT INTO users" +
-                "(login, password) VALUES (?,?)";
+                "(login, password, role) VALUES (?,?,?)";
         PreparedStatement preparedStatement = Database.getDbConnection().prepareStatement(insertStatement);
         preparedStatement.setString(1, user.getLogin());
         preparedStatement.setString(2, user.getPassword());
+        preparedStatement.setString(3, user.getRole().toString());
+
         preparedStatement.executeUpdate();
 
     }

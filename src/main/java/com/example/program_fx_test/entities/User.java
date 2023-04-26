@@ -5,15 +5,9 @@ public class User {
     private String login;
     private String password;
 
-    private Role role;
+    private Roles role;
 
-    public Role getRole() {
-        return role;
-    }
 
-    public void setRole(Role role) {
-        this.role = role;
-    }
 
     public User(String login, String password) {
         this.login = login;
@@ -34,5 +28,22 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Roles getRole() {
+        return role;
+    }
+
+    public void setRole(Roles role) {
+        this.role = role;
+    }
+
+    public static void main(String[] args) {
+        User user  = new User("login", "password");
+
+        user.role = Roles.STUDENT;
+
+        System.out.println("asd");
+
     }
 }

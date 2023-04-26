@@ -20,12 +20,6 @@ import javafx.stage.Stage;
 public class HelloController {
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
     private TextField login;
 
     @FXML
@@ -43,7 +37,6 @@ public class HelloController {
 
     @FXML
     void initialize() {
-
         next_button.setOnAction(event -> {
          String loginText = login.getText().trim();
          String password = this.password.getText().trim();
@@ -51,37 +44,25 @@ public class HelloController {
             try {
                 if(repository.checkUser(user)){
                     next_button.getScene().getWindow().hide();
-
                     sceneCreator.newScene("Home.fxml");
-
                 } else {
                     System.out.println("i am here");
                     sceneCreator.newScene("login_wrong_form.fxml");
                 }
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
+            } catch (SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
-
 
             if(!loginText.equals("") && !password.equals(""))
              loginUser(loginText, password);
                else
              System.out.println("Login and password is empty");
                 });
-
         regButton.setOnAction(event -> {
             sceneCreator.newScene("registration-from.fxml");
-
-
         });
     }
 
-
-
     private void loginUser(String loginText, String loginPassword) {
     }
-
-
 }
