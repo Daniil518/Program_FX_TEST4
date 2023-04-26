@@ -5,6 +5,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+import com.example.program_fx_test.SceneCreator;
 import com.example.program_fx_test.dao.Repository;
 import com.example.program_fx_test.entities.User;
 import javafx.fxml.FXML;
@@ -36,6 +37,8 @@ public class HelloController {
     @FXML
     private Button regButton;
 
+    private final SceneCreator sceneCreator = new SceneCreator();
+
     private final Repository repository = new Repository();
 
     @FXML
@@ -49,22 +52,11 @@ public class HelloController {
                 if(repository.checkUser(user)){
                     next_button.getScene().getWindow().hide();
 
-                    FXMLLoader loader = new FXMLLoader();
-                    loader.setLocation(getClass().getResource("/com/example/program_fx_test/Home.fxml"));
-
-                    try {
-                        loader.load();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                    Parent root = loader.getRoot();
-                    Stage stage = new Stage();
-                    stage.setScene(new Scene(root));
-                    stage.showAndWait();
+                    sceneCreator.newScene("Home.fxml");
 
                 } else {
                     System.out.println("i am here");
+                    sceneCreator.newScene("login_wrong_form.fxml");
                 }
             } catch (SQLException e) {
                 throw new RuntimeException(e);
@@ -80,23 +72,13 @@ public class HelloController {
                 });
 
         regButton.setOnAction(event -> {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/com/example/program_fx_test/registration-from.fxml"));
-
-            try {
-                loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
+            sceneCreator.newScene("registration-from.fxml");
 
 
         });
     }
+
+
 
     private void loginUser(String loginText, String loginPassword) {
     }
