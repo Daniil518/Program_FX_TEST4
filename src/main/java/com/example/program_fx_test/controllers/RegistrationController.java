@@ -41,20 +41,10 @@ public class RegistrationController implements Initializable {
             String password = this.password.getText().trim();
             User user = new User(loginText, password);
 
-            System.out.println("Dekan".equals(choiceBox.getValue()));
-
             switch (choiceBox.getValue()) {
-                case "Dekan":
-                    user.setRole(Roles.DEKAN);
-                    break;
-                case "Student":
-                    user.setRole(Roles.STUDENT);
-                    break;
-
-                case "Teacher":
-                    user.setRole(Roles.TEACHER);
-                    break;
-
+                case "Dekan" -> user.setRole(Roles.DEKAN);
+                case "Student" -> user.setRole(Roles.STUDENT);
+                case "Teacher" -> user.setRole(Roles.TEACHER);
             }
 
             Repository repository = new Repository();

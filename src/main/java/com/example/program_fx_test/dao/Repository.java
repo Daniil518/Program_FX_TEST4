@@ -5,6 +5,8 @@ import com.example.program_fx_test.entities.User;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Repository {
@@ -27,8 +29,7 @@ public class Repository {
     public static void main(String[] args) {
         Repository repository = new Repository();
         try {
-            boolean isUser =  repository.checkUser(new User("login", "password"));
-            System.out.println(isUser);
+            repository.createTabeles();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
@@ -49,7 +50,7 @@ public class Repository {
     }
 
     public boolean checkUser(User user) throws SQLException, ClassNotFoundException {
-        String checkStatement = "SELECT * FROM users WHERE login = '"+user.getLogin()+"'";
+        String checkStatement = "SELECT * FROM users WHERE login = '" + user.getLogin() + "'";
         PreparedStatement preparedStatement = Database.getDbConnection().prepareStatement(checkStatement);
         ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -58,7 +59,7 @@ public class Repository {
             String login = resultSet.getString(2);
             String password = resultSet.getString(3);
             System.out.println(Objects.equals(user.getPassword(), password));
-            if(Objects.equals(user.getPassword(), password)) return true;
+            if (Objects.equals(user.getPassword(), password)) return true;
 
         }
         resultSet.close();
@@ -66,7 +67,24 @@ public class Repository {
 
     }
 
-    public void deleteUser(User user){
+    public void deleteUser(User user) {
+
+    }
+
+    public List<User> getStudetsList() throws SQLException, ClassNotFoundException {
+
+        List<User> listUsers = new ArrayList<>();
+        String getStudentsStatement = "SELECT * FROM users WHERE role = 'STUDENT'";
+        PreparedStatement preparedStatement = Database.getDbConnection().prepareStatement(getStudentsStatement);
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        while (resultSet.next()) {
+            User user = new User(resultSet.getString(2), resultSet.getString(3));
+            listUsers.add(user);
+        }
+
+        return listUsers;
+
 
     }
 }

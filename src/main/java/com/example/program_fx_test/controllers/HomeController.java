@@ -73,7 +73,7 @@ public class HomeController {
             students.getScene().getWindow().hide();
 
             FXMLLoader loader1 = new FXMLLoader();
-            loader1.setLocation(getClass().getResource("/com/example/program_fx_test/Student.fxml"));
+            loader1.setLocation(getClass().getResource("/com/example/program_fx_test/Students_new.fxml"));
 
             try {
                 loader1.load();
