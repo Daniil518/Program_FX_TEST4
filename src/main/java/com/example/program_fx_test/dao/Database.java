@@ -1,15 +1,16 @@
 package com.example.program_fx_test.dao;
-import com.example.program_fx_test.Const;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class Database extends Configs {
 
     public static Connection getDbConnection()
             throws ClassNotFoundException,SQLException{
-        Class.forName(Const.dbClass);
+        Class.forName(dbClass);
         return DriverManager.getConnection(
-                Const.dburl,Const.dbUser,Const.dbPassword);
+                dbUrl,dbUser,dbPass);
     }
 
 }

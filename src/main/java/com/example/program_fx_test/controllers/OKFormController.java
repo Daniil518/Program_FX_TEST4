@@ -11,12 +11,12 @@ public class OKFormController {
 
     @FXML
     void initialize() {
-        okButton.setOnAction(event -> {
+        okButton.setOnAction(event ->
 
-            okButton.getScene().getWindow().hide();
+            okButton.getScene().getWindow().hide());
 
 
-        });
+
 
     }
 

@@ -1,9 +1,8 @@
 package com.example.program_fx_test.dao;
 
 public class Configs {
-    protected String dbHost = "localhost";
-    protected String dbPort = "3306";
-    protected String dbUser = "user";
-    protected String dbPass = "user";
-    protected String dbName = "db";
+    protected static String dbUrl = "jdbc:mysql://localhost:3306/mydb";
+    protected static String dbClass = "com.mysql.cj.jdbc.Driver";
+    protected static String dbUser = "user";
+    protected static String dbPass = "user";
 }

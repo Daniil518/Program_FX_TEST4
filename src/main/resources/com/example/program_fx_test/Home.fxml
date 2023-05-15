@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="802.0" style="-fx-background-color: #DEB887;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.program_fx_test.controllers.HomeController">
    <children>
-      <AnchorPane layoutX="5.0" layoutY="40.0" prefHeight="391.0" prefWidth="186.0" style="-fx-background-color: #00008B;">
+      <AnchorPane layoutX="3.0" layoutY="35.0" prefHeight="307.0" prefWidth="186.0" style="-fx-background-color: #00008B;">
          <effect>
             <Shadow height="3.17" radius="0.2925" width="0.0">
                <color>
@@ -24,6 +24,9 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </AnchorPane>
+      <Button fx:id="teachers" layoutX="10.0" layoutY="241.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="175.0" text="Учителя" />
+      <Button fx:id="students" layoutX="9.0" layoutY="158.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="175.0" text="Ученики" />
+      <Button fx:id="dekan" layoutX="16.0" layoutY="59.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="160.0" text="Декан " />
       <AnchorPane layoutX="194.0" prefHeight="507.0" prefWidth="611.0" style="-fx-background-color: #F0F8FF;">
          <children>
             <AnchorPane layoutX="142.0" layoutY="40.0" prefHeight="70.0" prefWidth="327.0" style="-fx-background-color: #00008B;">
@@ -60,9 +63,5 @@
             </Label>
          </children>
       </AnchorPane>
-      <Button fx:id="dekan" layoutX="16.0" layoutY="59.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="160.0" text="Декан " />
-      <Button fx:id="students" layoutX="9.0" layoutY="158.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="175.0" text="Ученики" />
-      <Button fx:id="teachers" layoutX="10.0" layoutY="241.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="175.0" text="Учителя" />
-      <Button fx:id="Reference" layoutX="44.0" layoutY="349.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="114.0" text="Справка" />
    </children>
 </AnchorPane>
