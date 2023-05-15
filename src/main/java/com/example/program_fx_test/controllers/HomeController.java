@@ -34,9 +34,6 @@ public class HomeController {
     void initialize() {
         dekan.setOnAction(event -> {
           sceneCreator.newScene("Director.fxml");});
-        Reference.setOnAction(event -> {
-            sceneCreator.newScene("text.fxml");
-        });
         students.setOnAction(event -> {
             sceneCreator.newScene("Student.fxml");
         });
